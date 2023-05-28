@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://godot-rust.github.io/</loc>
+    </url>
+    <url>
+        <loc>https://godot-rust.github.io/docs/</loc>
+    </url>
+    <url>
+        <loc>https://godot-rust.github.io/docs/gdext-2/</loc>
+        <lastmod>2023-05-06</lastmod>
+    </url>
+    <url>
+        <loc>https://godot-rust.github.io/docs/gdext-5/</loc>
+        <lastmod>2023-05-06</lastmod>
+    </url>
+    <url>
+        <loc>https://godot-rust.github.io/docs/gdext-7/</loc>
+        <lastmod>2023-05-07</lastmod>
+    </url>
+    <url>
+        <loc>https://godot-rust.github.io/docs/gdext-master/</loc>
+        <lastmod>2023-05-07</lastmod>
+    </url>
+    <url>
+        <loc>https://godot-rust.github.io/docs/page/1/</loc>
+    </url>
+</urlset>
