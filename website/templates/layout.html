@@ -47,7 +47,33 @@
         {{ config.title }}
         {% endblock title %}
       </title>
-  </head>
+
+
+      {#
+         OpenGraph meta tags for social media preview
+         Can be tested on https://www.opengraph.xyz or https://metatags.io.
+      #}
+      <!-- OpenGraph meta tags for social media preview -->
+
+      <!-- Discord, Facebook, etc. -->
+      <meta property="og:url" content="https://godot-rust.github.io/">
+      <meta property="og:type" content="website">
+      <meta property="og:title" content="godot-rust: Rust bindings for Godot game engine">
+      <meta property="og:description" content="Some description">
+      <meta property="og:image" content="{{ get_url(path='godot-ferris-og-dark.png') }}">
+
+      <!-- Twitter Meta Tags -->
+      <meta name="twitter:card" content="summary_large_image">
+      <meta property="twitter:domain" content="godot-rust.github.io">
+      <meta property="twitter:url" content="https://godot-rust.github.io/">
+      <meta name="twitter:title" content="godot-rust: Rust bindings for Godot game engine">
+      <meta name="twitter:description" content="Some description">
+      <meta name="twitter:image" content="{{ get_url(path='godot-ferris-og-dark.png') }}">
+
+
+
+
+    </head>
   <body class="body-background dark:body-background flex flex-col h-screen justify-between">
   <!---------------------------------------------------------->
   <!------------------------- NAVBAR ------------------------->
