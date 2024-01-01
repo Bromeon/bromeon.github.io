@@ -4,7 +4,8 @@
 # file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 # The URL the site will be built for
-base_url = "https://godot-rust.github.io"
+#base_url = "https://godot-rust.github.io"
+base_url = "http://bromeon.github.io"
 
 title = "godot-rust: Rust bindings for the Godot game engine"
 
