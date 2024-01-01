@@ -42,12 +42,26 @@
       <link id="syntax_highlight" href="#" rel="stylesheet">
       #}
 
-      <title>
-        {% block title %}
-        {{ config.title }}
-        {% endblock title %}
-      </title>
+      {#- Custom variables prefixed with 'c_' -#}
 
+      {%- if section -%}
+        {%- set c_page_title = section.title -%}
+      {%- elif page -%}
+        {%- set c_page_title = page.title | replace(from='~', to=' ') -%}
+      {%- else -%}
+        {#- Includes 404.html, which has only a 'config' metadata; see __tera_context variable -#}
+        {%- set c_page_title = config.title -%}
+      {%- endif -%}
+
+      {%- set c_page_summary = 'godot-rust' -%}
+      {%- set c_page_image = get_url(path='godot-ferris-og-dark.png') -%}
+
+      {# Page title #}
+      <title>
+        {%- block title -%}
+        {{ c_page_title }}
+        {%- endblock title -%}
+      </title>
 
       {#
          OpenGraph meta tags for social media preview
@@ -56,22 +70,19 @@
       <!-- OpenGraph meta tags for social media preview -->
 
       <!-- Discord, Facebook, etc. -->
-      <meta property="og:url" content="https://godot-rust.github.io/">
+      <meta property="og:url" content="{{ get_url(path='.') | safe }}">
       <meta property="og:type" content="website">
-      <meta property="og:title" content="godot-rust: Rust bindings for Godot game engine">
-      <meta property="og:description" content="Some description">
-      <meta property="og:image" content="{{ get_url(path='godot-ferris-og-dark.png') }}">
+      <meta property="og:title" content="{{ c_page_title }}">
+      <meta property="og:description" content="{{ c_page_summary }}">
+      <meta property="og:image" content="{{ c_page_image | safe }}">
 
       <!-- Twitter Meta Tags -->
       <meta name="twitter:card" content="summary_large_image">
       <meta property="twitter:domain" content="godot-rust.github.io">
-      <meta property="twitter:url" content="https://godot-rust.github.io/">
-      <meta name="twitter:title" content="godot-rust: Rust bindings for Godot game engine">
-      <meta name="twitter:description" content="Some description">
-      <meta name="twitter:image" content="{{ get_url(path='godot-ferris-og-dark.png') }}">
-
-
-
+      <meta property="twitter:url" content="{{ get_url(path='.') | safe }}">
+      <meta name="twitter:title" content="{{ c_page_title }}">
+      <meta name="twitter:description" content="{{ c_page_summary }}">
+      <meta name="twitter:image" content="{{ c_page_image | safe }}">
 
     </head>
   <body class="body-background dark:body-background flex flex-col h-screen justify-between">
